@@ -273,8 +273,13 @@ String String::trimEnd(String& value, String trimString)
 				Nstr.str[n++] = value.str[i++];
 			i += 2;
 			l++;
+			if (value.str[i] == '\0')
+			{
+				i--;
+				n--;
+			}
 		}
-		Nstr.str[n++] = value.str[i++];
+			Nstr.str[n++] = value.str[i++];
 	}
 	Nstr.str[n] = '\0';
 	delete[] index;
